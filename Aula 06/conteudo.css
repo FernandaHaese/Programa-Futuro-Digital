@@ -1,0 +1,71 @@
+/*Atributo cor de fundo*/
+body {
+  background-color: rgb(0, 0, 0);
+}
+/*Atributos cor de texto, família da fonte e alinhamento do texto
+Nessa caso, para selecionar mais de um elemento, utilizamos vírgulo entre os elementos*/
+h1,
+h2,
+h3,
+p {
+  color: white;
+  font-family: "Mozilla Headline", sans-serif;
+  text-align: center;
+}
+/*Atributos borda e margem de um elemento*/
+h1 {
+  border-bottom: 1px solid white;
+  margin-bottom: 25px;
+}
+/*Atributos tamanho e peso da fonte*/
+p {
+  font-size: small;
+  font-weight: 400;
+}
+/*Atributo decoração de texto*/
+h3 {
+  text-decoration: underline;
+}
+/*Atributos borda, raio da borda, sombra da borda e margens esquerda e direita do elemento
+Nesse caso, estamos selecionando uma classe ao invés de um elementos, com o .nomedaclasse*/
+.imagem {
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 25px white;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*Borda, raio da borda, sombra da borda e margens esquerda e direita do elemento
+Nesse caso, estamos selecionando um id ao invés de um elementos, com o #nomedoID*/
+#tituloprincipal {
+  font-size: xx-large;
+  font-weight: 600;
+}
+/*Margem esquerda e especificação para os elementos flutuarem para a esquerda, lado-a-lado*/
+li {
+  margin-right: 50px;
+  float: left;
+}
+/*Forma de selecionar um ID de um tipo de elemento específico*/
+h1 #tituloprincipal {
+}
+/*Forma de selecionar uma classe de um tipo de elemento específico*/
+img .imagem {
+}
+/*Também é possível selecional um id e uma classe de um elemento específico ao mesmo tempo*/
+h1 .class #id {
+}
+/*Para selecionamento elementos que são "crianças" (ou seja, um elementos que está contido dentro de outro elemento "pai"), usamos > */
+li > ol {
+}
+/*Para selecionar todo determinado elemento que está dentro de um outro determinado elemento, que pode ser "pai", "avô", etc. */
+li ol {
+}
+/*Para selecionar um elemento imediatamenter depois de outro elemento*/
+p + img {
+}
+/*Para selecionar todo elemento que possui um outro elemento antes, não necessariamente sendo imediatamente antes ou não*/
+p ~ img {
+}
+
+/*Dever de casa: Acessar https://flukeout.github.io/ e fazer até o nível 20 pelo menos*/
