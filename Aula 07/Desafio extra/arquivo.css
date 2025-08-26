@@ -1,0 +1,23 @@
+.estilo-div {
+  border: solid 2px black;
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 4px 4px black;
+}
+
+.display-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.flex-item {
+  align-self: center;
+}
