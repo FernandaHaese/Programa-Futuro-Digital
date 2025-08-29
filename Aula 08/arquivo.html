@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="arquivo.css" />
+    <title>Aula 08</title>
+  </head>
+  <body>
+    <div class="flex-container">
+      <h1 class="estilo">Simbolos especiais</h1>
+      <p class="flex-item, estilo">
+        Para utilizar símbolos especiais em CSS, a melhor prática é garantir que
+        o arquivo HTML declare a codificação UTF-8 com
+        <b>meta charset="UTF-8"</b> no <b>head</b>, ou que a folha de estilo
+        declare a codificação usando <b>@charset "UTF-8";</b> no início do
+        arquivo, o que permite o uso direto dos caracteres especiais e garante
+        que eles sejam exibidos corretamente nos navegadores. Veja alguns
+        exemplos abaixo, e consulte
+        <a href="https://github.com/MatheusPrudente/special-character-codes"
+          >tabelas de símbolos UTF-8</a
+        >
+        online para conhecer mais símbolos
+      </p>
+    </div>
+    <div class="flex-container">
+      <div class="flex-item, estilo">
+        <h3>Símbolo maior que</h3>
+        <p>&gt;</p>
+      </div>
+      <div class="flex-item, estilo">
+        <h3>Símbolo menor que</h3>
+        <p>&lt;</p>
+      </div>
+    </div>
+    <div class="flex-container">
+      <h1 class="estilo">Display</h1>
+      <p class="flex-item, estilo">
+        A propriedade display no CSS é importante para controlar o layout. Ela
+        especifica se um elemento HTML é tratado como um bloco ou um elemento
+        embutido. Cada elemento HTML tem um valor de exibição padrão, dependendo
+        do tipo de elemento.
+      </p>
+    </div>
+    <div class="flex-container">
+      <div class="flex-item, estilo">
+        <h3>Display none</h3>
+        <p>Faz com que um elemento não seja renderizado na página</p>
+        <div class="estilo-exemplos">
+          <p id="display-none">Texto escondido aqui</p>
+        </div>
+      </div>
+      <div class="flex-item, estilo">
+        <h3>Display inline</h3>
+        <p>
+          Um elemento embutido não começa em uma nova linha e ocupa apenas a
+          largura necessária.
+        </p>
+        <div class="estilo-exemplos">
+          <br />
+          <br />
+          <li id="display-inline" class="estilo-exemplos">Item 1</li>
+          <li id="display-inline" class="estilo-exemplos">Item 2</li>
+          <li id="display-inline" class="estilo-exemplos">Item 3</li>
+          <p></p>
+        </div>
+      </div>
+      <div class="flex-item, estilo">
+        <h3>Display block</h3>
+        <p>
+          Um elemento de nível de bloco sempre começa em uma nova linha e ocupa
+          toda a largura disponível
+        </p>
+        <div>
+          <p id="display-block" class="estilo-exemplos">Item 1</p>
+          <p id="display-block" class="estilo-exemplos">Item 2</p>
+          <p id="display-block" class="estilo-exemplos">Item 3</p>
+        </div>
+      </div>
+      <div class="flex-item, estilo">
+        <h3>Display inline-block</h3>
+        <p>
+          Exibe um elemento como um contêiner de bloco em linha. O elemento em
+          si é formatado como um elemento em linha, mas você pode aplicar
+          valores de altura, largura, preenchimento e margem.
+        </p>
+        <div>
+          <p id="display-inline-block" class="estilo-exemplos">Item 1</p>
+          <p id="display-inline-block" class="estilo-exemplos">Item 2</p>
+          <p id="display-inline-block" class="estilo-exemplos">Item 3</p>
+        </div>
+      </div>
+      <div class="flex-item, estilo">
+        <h3>Display list item</h3>
+        <p>
+          Usado para adicionar a bolinha de uma lista a um elemento qualquer
+        </p>
+        <div class="estilo-exemplos">
+          <p id="display-list-item">Item 1</p>
+          <p id="display-list-item">Item 2</p>
+          <p id="display-list-item">Item 3</p>
+        </div>
+      </div>
+      <div class="flex-item, estilo">
+        <h3>Centro perfeiro</h3>
+        <p>Usado para alinhar um elemento ao centro perfeitamente</p>
+        <div class="estilo-exemplos" id="centro-perfeito">
+          <img
+            src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
+            alt="image placeholder"
+          />
+        </div>
+      </div>
+      <div class="flex-container">
+        <h1 class="estilo">Formas geométricas e transformações</h1>
+      </div>
+      <div class="flex-container">
+        <div class="flex-item, estilo">
+          <h3>Css shape</h3>
+          <p>
+            Para criar formas em CSS, você pode acessar bibliotecas como o
+            Css-shapes, em que você copia e aplica classes a um elemento div,
+            para adicionar formas a sua página
+          </p>
+          <div class="heart"></div>
+        </div>
+        <div class="flex-item, estilo">
+          <h3>Transformação</h3>
+          <p>
+            A propriedade CSS transform aplica uma transformação 2D ou 3D a um
+            elemento. Esta propriedade permite girar, dimensionar, mover e
+            inclinar elementos. Com a propriedade transform você pode usar as
+            seguintes funções de transformação 2D:
+          </p>
+          <ol>
+            <li>translate()</li>
+            <li>rotate()</li>
+            <li>scaleX()</li>
+            <li>scaleY()</li>
+            <li>scale()</li>
+            <li>skewX()</li>
+            <li>skewY()</li>
+            <li>skew()</li>
+            <li>matrix()</li>
+          </ol>
+          <p><b>Exemplo:</b></p>
+          <br />
+          <div class="arrow"></div>
+          <br />
+        </div>
+        <div class="flex-item, estilo">
+          <h3>Hover</h3>
+          <p>
+            A :hoverpseudoclasse CSS é usada para selecionar elementos quando
+            você passa o mouse sobre eles, aplicando algum estilo
+          </p>
+          <button class="button">Exemplo</button>
+        </div>
+      </div>
+      <div class="flex-container">
+        <h1 class="estilo">Fontes</h1>
+        <p class="flex-item, estilo">
+          A escolha da fonte certa tem um grande impacto na experiência dos
+          leitores em um site. Em css, usamos a propriedade font-family poara
+          especificar a fonte de um elemento. Geralmente, essa propriedade deve
+          conter vários nomes de fontes como um sistema de "fallback". Se o
+          navegador não suportar a primeira fonte, ele tentará a próxima. Os
+          nomes das fontes devem ser separados por vírgula.
+        </p>
+      </div>
+      <div class="flex-container">
+        <div class="flex-item, estilo">
+          <h3>Fontes alternativas</h3>
+          <p>
+            Se não quiser usar nenhuma das fontes padrão em HTML, podemos
+            consultar biblitoecas de fontes online, como a
+            <a href="">dafont</a> e <a href="">google fonts</a>, copiando e
+            colando o código embutido que disponibilizam da fonte em seu arquivo
+            css e html
+          </p>
+          <div class="estilo-exemplos">
+            <p class="pixelify-sans">Exemplo de fonte alternativa</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
