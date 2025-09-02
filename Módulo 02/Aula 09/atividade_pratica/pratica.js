@@ -19,3 +19,20 @@ function calcularIdadeAjustada(idadeOrig) {
 
 const resultadoIdadeAjustada = calcularIdadeAjustada(resultado);
 console.log(`A idade ajustada do animal é ${resultadoIdadeAjustada} anos`);
+
+//Declare uma função qualquer dentro de uma variável
+const dividir = (numero, divisor) => {
+  return numero / divisor;
+};
+const resultadoFuncao = dividir(30, 5);
+console.log(resultadoFuncao);
+
+//Agora, uma cliente entrou na clínica veterinária com 3 anos. Adapte o programa para usar arrays e lidar com todos os gatos de uma vez
+const idadeGatos = [];
+idadeGatos.push(resultado);
+idadeGatos.forEach(function calcularIdadeAjustada(idadeOrig) {
+  const IdadeAjustada = idadeOrig * 7;
+  return IdadeAjustada;
+});
+console.log(idadeGatos);
+

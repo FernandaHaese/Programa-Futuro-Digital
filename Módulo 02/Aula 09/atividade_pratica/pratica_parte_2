@@ -1,0 +1,24 @@
+//Agora, uma cliente entrou na clínica veterinária com 3 anos. Adapte o programa para usar arrays e lidar com todos os gatos de uma vez
+
+const prompt = require("prompt-sync")();
+
+const idadeDoAnimal = [];
+
+const resultadoPerguntaIdade = (perguntaldade()) => {
+     const idade = prompt("Qual é a idade do seu animal?");
+     return idade;
+}
+
+const resultadoIdadeAjustada = (calcularIdadeAjustada(idadeOrig)) => {
+      const idadeAjustada = idadeOrig * 7;
+      return   idadeAjustada;
+}
+
+push.
+
+
+
+
+
+
+
