@@ -1,0 +1,12 @@
+.estilo {
+  border: solid 2px black;
+  box-shadow: 4px 4px black;
+  padding: 20px;
+  margin: 20px;
+}
+
+.estilo-exemplos {
+  border: solid 2px black;
+  padding: 20px;
+  margin: 20px;
+}

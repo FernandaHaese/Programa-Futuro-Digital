@@ -13,7 +13,7 @@ nomeDaVariavel = nomeDaVariavel - 5;
 //Divisão:
 nomeDaVariavel = nomeDaVariavel / 5;
 //Multiplicação:
-nomeDaVariabel = nomeDaVariavel * 5;
+nomeDaVariavel = nomeDaVariavel * 5;
 //Somar apenas +1:
 nomeDaVariavel++;
 //Subtrair apenas -1:

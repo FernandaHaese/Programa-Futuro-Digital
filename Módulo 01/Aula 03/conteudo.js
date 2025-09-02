@@ -3,7 +3,7 @@ const nome = "Fernanda";
 //Exibindo os dados de uma string
 console.log(nome);
 //Não é possível usar aspas dentro de uma string, deve-se usar ''
-const frase = "Fernanda disse 'Olá";
+const frase = "Fernanda disse 'Olá'";
 //Para identificar algum caractere da sua string, use nomeDaString[]
 console.log("A terceira letra do meu nome é", nome[2]);
 //Para contar os caracteres de sua string, use lenght
