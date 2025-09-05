@@ -1,6 +1,9 @@
-//Para otimizar nosso fluxo de trabalho, podemos reutilizar bibliotecas npm, com conteúdo pronto, em nosso código.
-// No exemplo a baixo, iremos utilizar a biblioteca prompt-sync, usada para capturar resultados.
-//Primeiro, instale a biblioteca com o comando no terminal: npm install nome-da-biblioteca
+// O  node package manager (NPM) é utilizado para instalar e gerenciar bibliotecas externas, para otimizar nosso fluxo de trabalho, reaproveitando conteúdo já prontos.
+// Veja mais sobre npm em: https://docs.npmjs.com/about-npm
+
+// No exemplo a baixo, iremos utilizar a biblioteca prompt-sync, usada para capturar resultados. Primeiro, instale a biblioteca com o comando no terminal: npm install nome-da-biblioteca. Se não executar no terminal de seu editor de código, execute no prompt de comando de seu sistema.
+// Para organizar os módulos instalados, é considerada uma boa prática crias páginas para para cada funcionalidade nova de seu código.
+
 //Depois, crie uma constante valor require("nome-da-biblioteca")()
 
 const prompt = require("prompt-sync")();
