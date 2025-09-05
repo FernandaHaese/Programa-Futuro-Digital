@@ -40,8 +40,10 @@ turma.imprimirListaPresenca = function () {
 //objects.entries para capturar ambos
 
 //Também é possivel usar o for para iterar sobre todas as chaves de um objeto
- for (key in alunos) {
-    console.log(`Chave: ${key}\t\t Valor: ${alunos[key]}`)
- }
+for (key in alunos) {
+  console.log(`Chave: ${key}\t\t Valor: ${alunos[key]}`);
+}
 
- //A estrutura da memória de um computador fica armazenada de maneira física, ou seja, todo dado possui um endereço.
+//A estrutura da memória de um computador fica armazenada de maneira física, ou seja, todo dado possui um endereço. Por conta disso, objetos direntes podem ter um mesmo endereço.
+
+//Em verdade, todos os tipos de valores que não são primitivos, como strings, são objetos. Por exemplo, arrays e funções também são objetos.
