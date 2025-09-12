@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio</title>
+  </head>
+  <body>
+    <script>
+      //Atividade 04: Faça um script que automaticamente popula uma página html com card de pets, com nome, idade, espécie e raça, a partir de um array de objetos. Dica: Usem um forEach (ou For padrão) e o .createElemente/.appendChild para adicionar cada um dos elementos do array à página
+
+      const pets = [
+        { nome: "Luna", espécie: "Felino", raça: "Gato Doméstico", idade: "3" },
+      ];
+
+      const container = document.getElementById("container-cards");
+
+      pets.forEach((pet) => {
+        const card = document.createElement("div");
+        card.classList.add("pet-card");
+
+        const nome = document.createElement("p");
+        nome.innerText = pet.nome;
+
+        const especie = document.createElement("p");
+        especie.innerText = `Espécie: ${pet.especie}`;
+
+        const raca = document.createElement("p");
+        raca.innerText = `Raça: ${pet.raca}`;
+
+        const idade = document.createElement("p");
+        idade.innerText = `Idade: ${pet.idade} anos`;
+
+        card.appendChild(nome);
+        card.appendChild(especie);
+        card.appendChild(raca);
+        card.appendChild(idade);
+        container.appendChild(card);
+      });
+    </script>
+    <div id="container-cards"></div>
+  </body>
+</html>

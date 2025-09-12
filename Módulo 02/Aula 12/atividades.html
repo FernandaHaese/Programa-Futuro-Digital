@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 12</title>
+  </head>
+  <body>
+    <h1 id="titulo">Titulo aqui</h1>
+    <p class="primeiroParagrafo">
+      Documento Object Model (DOM) é um mapa que permite o browser a
+      correlacionar elementos do documento HTML em objetos js. São estrutrados
+      em árvore como nós pais e nós filhos. Ele é "live", ou seja, se o HTML
+      muda, o DOM também muda.
+    </p>
+    <br />
+    <div id="container-cards"></div>
+    <button id="alerta">
+      <a href="https://www.w3schools.com/js/js_htmldom.asp">Saiba mais</a>
+    </button>
+
+    <script>
+      /*
+      Atividade 01: Utilize window.screen.width e window.screen.height para criar um alerta que mostre as dimensões da tela dentro de um tag script do seu HTML. Depois, explore outras propriedaes como location e navigator
+
+      alert(
+        `Dimensões de tela:${window.screen.width} X ${window.screen.height} \n Domain:${window.location.hostname} \n Browser: ${window.navigator.appName}`
+      );
+      */
+
+      //Atividade 02: Usar as propriedades e métodos do document para mudar o texto de um elemento através do id e a cor de outro através da classe
+      const titulo = document.getElementById("titulo");
+      titulo.innerText = "Documento Object Model (DOM)";
+
+      const paragrafo = document.querySelectorAll(".primeiroParagrafo");
+      paragrafo.forEach((e) => {
+        e.style.color = "blue";
+      });
+
+      //Atividade 03: Usar a propriedade onClick para criar um alerta quando um botão for pressionado
+      const alerta = () => {
+        alert("Você será redirecionado para o cadastro de animais");
+      };
+      document.getElementById("alerta").onclick = alerta;
+    </script>
+  </body>
+</html>
