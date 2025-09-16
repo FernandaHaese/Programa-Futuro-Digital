@@ -5,7 +5,6 @@ const form = document.getElementById("formulario");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
   const nome = document.getElementById("nome").value;
   const especie = document.getElementById("especie").value;
   const raca = document.getElementById("raca").value;
