@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Animais</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <h1 class="estilo">Cadastre seu pet</h1>
+    <form id="formulario" class="estilo" action="">
+      <label for="nome">Nome do animal:</label> <br />
+      <input type="text" name="nome" id="nome" placeholder="Nome" />
+      <br />
+      <br />
+      <label for="especie">Espécie do animal:</label> <br />
+      <input
+        type="text"
+        name="especie"
+        id="especie"
+        placeholder="Espécie do animal"
+      />
+      <br />
+      <br />
+      <label for="raca">Raça do animal:</label> <br />
+      <input type="text" name="raca" id="raca" placeholder="Raça do animal" />
+      <br />
+      <br />
+      <label for="idade">Idade do animal:</label> <br />
+      <input
+        type="number"
+        name="idade"
+        id="idade"
+        placeholder="Idade do animal"
+      />
+      <br />
+      <br />
+      <label for="consulta">Agende uma consulta:</label> <br />
+      <input type="date" name="consulta" id="consulta" />
+      <br />
+      <br />
+      <button type="submit">Enviar</button>
+    </form>
+    <h1 class="estilo">Animais cadastrados</h1>
+    <div id="container-cards" class="estilo"></div>
+    <script src="formulario.js"></script>
+  </body>
+</html>
