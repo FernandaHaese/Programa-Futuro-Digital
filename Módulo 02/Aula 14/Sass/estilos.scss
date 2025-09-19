@@ -1,0 +1,41 @@
+$primary-color: white;
+$secondary-color: black;
+$font-size: 16px;
+$cores: blue, red, green, orange, purple;
+
+* {
+  font-size: $font-size;
+}
+
+@mixin container() {
+  border: solid 2px black;
+  box-shadow: 4px 4px black;
+  padding: 20px;
+  margin: 20px;
+}
+
+div {
+  @include container();
+  h1 {
+    font-size: $font-size * 3;
+  }
+  h2 {
+    font-size: $font-size * 2;
+  }
+}
+
+@each $cor in $cores {
+  .bg-#{$cor} {
+    background-color: $cor;
+  }
+}
+
+div.exemplos {
+  box-shadow: none;
+  margin: 0px;
+}
+
+div.heranca {
+  @extend .exemplos;
+  background-color: lightgray;
+}

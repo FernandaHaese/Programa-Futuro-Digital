@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 14</title>
+    <link rel="stylesheet" href="Sass/estilosCompilados.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Sass</h1>
+      <p>
+        Um sistema Sass (Syntactically Awesome Style Sheets) é um
+        pré-processador CSS que adiciona funcionalidades avançadas ao CSS, como
+        variáveis, aninhamento, mixins (funções) e herança, para tornar o código
+        mais modular, reutilizável e fácil de manter. O código Sass é escrito
+        numa linguagem que é convertida para CSS padrão para que possa ser lido
+        e interpretado pelos navegadores web.
+      </p>
+      <p>
+        Um navegador não entende código Sass. Portanto, você precisará de um
+        pré-processador Sass para converter o código Sass em CSS padrão. Esse
+        processo é chamado de transpilação. Portanto, você precisa fornecer a um
+        transpilador (algum tipo de programa) algum código Sass e, em seguida,
+        obter de volta algum código CSS.
+      </p>
+    </div>
+    <div>
+      <h2>Variáveis</h2>
+      <p>
+        No Sass, podemos definir variáveis, que permitem definir valores um
+        única vez e aplicá-los a diversos elkementos, facilitando ajustes
+        posteriores. Podemos declarar uma variável utilizando o operador $,
+        então passamos a propriedade, podendo ela ser uma cor, fonte, tamanho da
+        fonte, largura ou altura, etc. variáveis:
+      </p>
+    </div>
+    <div>
+      <h2>Nesting</h2>
+      <p>
+        Nesting significado sintaxe aninhada, permitindo organizar os seletores
+        de forma hierarquicá - assim como no código HTML, deixando o código
+        muito mais limpo e legível
+      </p>
+    </div>
+    <div>
+      <h2>Mixin</h2>
+      <p>
+        A propriedade mixin permite que você crie um grupo de declarações CSS
+        que pode ser reutilizado em todo o seu site. Portanto, primeiro criamos
+        um propriedade @mixin name seguida pelos valores em {} e depois usamos a
+        @include para permitir que você use (inclua) o mixin.
+      </p>
+    </div>
+    <div>
+      <h2>Funções</h2>
+      <p>
+        O Sass permite também que adicionemos funções em nosso código Css, uma
+        excelente maneira de otimizar o código, impedir repetições e facilitar
+        alterações. Para isso, o Sass utiliza o @funtion, @for, @if, @else,
+        @each, @while ...
+      </p>
+      <div class="exemplos">
+        <button class="bg-red">Exemplo</button>
+        <button class="bg-green">Exemplo</button>
+        <button class="bg-blue">Exemplo</button>
+        <button class="bg-orange">Exemplo</button>
+        <button class="bg-purple">Exemplo</button>
+      </div>
+    </div>
+    <div>
+      <h2>Herança</h2>
+      <p>
+        A @extend permite que você compartilhe um conjunto de propriedades CSS
+        de um seletor para outro. A @extend é útil se você tiver elementos com
+        estilos quase idênticos, mas que diferem apenas em alguns pequenos
+        detalhes.
+      </p>
+      <div class="heranca">Exemplo</div>
+    </div>
+    <div>
+      <h2>Import</h2>
+      <p>
+        Assim como o CSS, o Sass também suporta a @import diretiva. A @import
+        permite que você inclua o conteúdo de um arquivo em outro.
+      </p>
+    </div>
+  </body>
+</html>
