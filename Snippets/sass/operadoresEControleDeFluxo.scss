@@ -1,0 +1,28 @@
+$tamanhoBase: 32px;
+
+h1 {
+    font-size: $tamanhoBase * 2;
+}
+
+h2 {
+    font-size: $tamanhoBase;
+}
+
+h3 {
+    font-size: $tamanhoBase - 5;
+}
+
+
+@for $i from 1 through 5 {
+    .item-#{$i} {
+        font-size: 14px+2*$i;
+    }
+}
+
+@for $i from 1 through 6 {
+    .cinza-#{$i} {
+        display: inline;
+        color: rgb(255*$i/7,255*$i/7,255*$i/7);
+        font-weight: 100*$i;
+    }
+}

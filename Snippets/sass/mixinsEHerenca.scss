@@ -1,0 +1,55 @@
+@mixin textoDestaque {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+
+h1 {
+    @include textoDestaque;
+}
+
+.destaque {
+    @include textoDestaque;
+}
+
+
+
+@mixin bordaArredondada($raio:10px) {
+    border: black solid 4px;
+    border-radius: $raio;
+    padding: $raio*2;
+}
+
+.redondoNormal {
+    @include bordaArredondada;
+}
+
+.extraRedondo {
+    @include bordaArredondada(30px);
+}
+
+h2 {
+    @include bordaArredondada(5px);
+}
+
+.textoEspecial {
+    font-family: cursive;
+    font-style: italic;
+    display: inline;
+} 
+
+.textoExtraEspecial{
+    @extend .textoEspecial;
+    text-decoration: underline;
+}
+
+.textoExtraExtraEspecial{
+    @extend .textoExtraEspecial;
+    text-decoration:line-through;
+    text-transform: uppercase;
+}
+
+.mensagem {
+    padding:20px
+}

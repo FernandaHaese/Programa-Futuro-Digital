@@ -1,0 +1,31 @@
+$cor-principal: #588067;
+$cor-secundaria: #5d6853;
+$cor-texto: white;
+
+$padding-padrao: 10px;
+
+body {
+    background-color: $cor-secundaria;
+}
+
+h1 {
+    color: $cor-texto;
+}
+
+
+h4 {
+    color: $cor-texto;
+}
+
+p {
+    color: $cor-texto;
+}
+
+.card {
+    background-color: $cor-principal;
+    border: $cor-texto solid 2px;
+    border-radius: 5px;
+    padding: $padding-padrao;
+    text-align: center;
+}
+

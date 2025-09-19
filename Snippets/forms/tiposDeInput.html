@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Alguns tipos de inputs</title>
+</head>
+<body>
+    <h1> Existem <b>vários</b> tipos de input</h1>
+    <form id="formComVariosInputs">
+        <div class="inputGroup">
+            <label for="texto">Texto normal:</label>
+            <input title="texto" type="text" placeholder="Texto">
+            &nbsp;
+            <label for="numero">Só aceita números:</label>
+            <input title="numero" type="number" placeholder="Número">
+            &nbsp;
+            <label for="cor">Cor:</label>
+            <input title="cor" type="color" placeholder="Cor">
+            &nbsp;
+            <label for="datas">Data:</label>
+            <input title="datas" type="date" placeholder="Data">
+        </div>
+        <div class="inputGroup">
+            <label for="email">Email:</label>
+            <input title="email" type="email" placeholder="Email">
+            &nbsp;
+            <label for="senha">Senha:</label>
+            <input title="senha" type="password" placeholder="Senha">
+            &nbsp;
+            <label for="url">URL:</label>
+            <input title="url" type="url" placeholder="URL">
+            &nbsp;
+            <label for="tel">Telefone:</label>
+            <input title="tel" type="tel" placeholder="Telefone">
+        </div>
+        <div class="inputGroup">
+            <label>Checkbox:</label>
+            <input title="checkbox1" type="checkbox" name="check" value="1">
+            <label for="checkbox1">Opção 1</label>
+            <input title="checkbox2" type="checkbox" name="check" value="2">
+            <label for="checkbox2">Opção 2</label> 
+            &nbsp;
+            <label>Radio:</label>
+            <input title="radio1" type="radio" name="radio" id="opcao1" value="1">
+            <label for="opcao1">Opção 1</label>
+            <input title="radio2" type="radio" name="radio" id="opcao2" value="2">
+            <label for="opcao2">Opção 2</label>
+            &nbsp;
+            <label for="range">Range:</label>
+            <input title="range" type="range" min="0" max="10">
+            &nbsp;
+            <label for="file">File:</label>
+            <input title="file" type="file">
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+    <script src="tiposDeInput.js"></script>
+    
+</body>
+</html>
