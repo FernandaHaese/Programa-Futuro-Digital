@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidades Flexiveis</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Unidades Flexíveis</h1>
+      <p>
+        CSS oferece um número de unidades diferentes para as expressões de
+        tamanho. Cada propriedade usada em CSS possui um tipo de valor que
+        descreve os tipos de valores permitidos. Um dos aspectos mais
+        importantes para esses Web Designers é a escalabilidade e adaptabilidade
+        de um layout, ou seja, a medida em que as unidades aumentam de uma
+        maneira previsível e razoável, seu layout deve ser capaz de se adequar a
+        essas mudanças.
+      </p>
+    </div>
+    <div class="container">
+      <h2>Medidas absolutas</h2>
+      <p>
+        São medidas que não estão referenciadas a qualquer outra unidade, ou
+        seja, não dependem de um valor de referência. São unidades de medidas
+        definidas pela física, como o píxel, centímetro, metro, etc...
+      </p>
+    </div>
+    <div class="container">
+      <h3>Pixel (px)</h3>
+      <p>
+        Píxel nada mais é do que os pequenos pontinhos luminosos da tela do seu
+        monitor, celular, televisão, etc. É uma medida muito conhecida por
+        webdesigners. No entanto, pode não ser muito recomendada por manter o
+        mesmo tamanho em diversos dispositivos, prejudicando a responsividade.
+      </p>
+      <div class="exemplo">
+        <p id="pixel">Exemplo</p>
+      </div>
+      <h3>Points (pt)</h3>
+      <p>
+        A medida point é geralmente utilizada em propriedades relacionadas a
+        fonte do seu projeto. Sua abreviação se dá com a marcação de pt e seu
+        uso não é tão comum, você provavelmente verá essa unidade muito
+        raramente.
+      </p>
+      <div class="exemplo">
+        <p id="point">Exemplo</p>
+      </div>
+      <h3>Outras medidas</h3>
+      <p>
+        Polegada ou inch em inglês é mais uma unidade de medida que conhecemos
+        do mundo das medidas absolutas. Mas elas não costumam ser utilizadas em
+        projetos, uma vez que não existem um uso prático para elas.
+      </p>
+      <div class="exemplo">
+        <p id="polegadas">Exemplo</p>
+      </div>
+      <p>
+        Nós brasileiros, que adotamos o sistema métrico, conhecemos bem as
+        medidas de centímetros e milímetros, que são bastante utilizadas no dia
+        a dia. Apesar de bastante comuns, tanto centímetro e milímetro são pouco
+        usadas no CSS.
+      </p>
+      <div class="exemplo">
+        <p id="centimetros">Exemplo</p>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Medidas relativas</h2>
+      <p>
+        Essas medidas são calculadas tendo como base uma outra unidade de medida
+        definida, como por exemplo em e o rem. O uso delas é mais apropriado
+        para que possamos fazer ajustes em diferentes dispositivos garantindo um
+        layout consistente e fluido em diversas mídias.
+      </p>
+    </div>
+    <div class="container">
+      <h3>Ems(em)</h3>
+      <p>
+        Essa unidade muda para os elementos filhos de acordo com o tamanho da
+        fonte (font-size) do elemento pai. Ela possui suporte na maioria dos
+        navegadores e é bastante famosa no mundo do CSS.
+      </p>
+      <div class="exemplo">
+        <p id="em">Exemplo</p>
+      </div>
+      <h3>Rems(rem)</h3>
+      <p>
+        O REM vem como sucessor do EM e ambos compartilham a mesma lógica de
+        funcionamento (font-size), porém a forma de implementação é diferente.
+        Enquanto o em está diretamente relacionado ao tamanho da fonte do
+        elemento pai, o rem está relacionado com o tamanho da fonte do elemento
+        root (raiz), no caso, a tag.
+      </p>
+      <p>
+        O fato de que o rem se relaciona com o elemento raiz resolve aquele
+        problema que tínhamos com diversas divs (elementos) aninhados, uma vez
+        que não haverá essa "herança" de tamanhos.
+      </p>
+      <p>
+        No entanto, não é utilizada tão utilizada quanto a unidade em, por conta
+        da falte de suporte de alguns browsers.
+      </p>
+      <div class="exemplo">
+        <p id="rem">Exemplo</p>
+      </div>
+      <h3>Porcentagem</h3>
+      <p>
+        Apesar de não ser uma unidade de medida, a porcentagem costuma ser
+        bastante utilizada quando falamos de layout responsivo e fluido. A
+        porcentagem permite que criemos módulos que sempre vão se readaptar para
+        ocupar a quantidade especificada. Por exemplo, se definirmos um elemento
+        tendo um tamanho de 50%, independente do dispositivo em questão, esse
+        módulo sempre ocupará metade do espaço que lhe cabe (caso esteja dentro
+        de algum outro elemento).
+      </p>
+      <div class="exemplo">
+        <p id="porcentagem">Exemplo</p>
+      </div>
+      <h3>Ch</h3>
+      <p>
+        Também uma unidade pouco conhecida, o ch (character unit) é definida na
+        documentação como sendo a "medida avançada" da largura do caractere zero
+        ("0").
+      </p>
+      <div class="exemplo">
+        <p id="ch">Exemplo</p>
+      </div>
+      <h3>Vw & Vh</h3>
+      <p>
+        Vw e Vh equivalem a viewport width e viewport height. Viewport nada mais
+        é que a área visível de uma página web para o seu usuário, essa viewport
+        pode variar de acordo com o dispositivo, sendo menor em celulares e
+        maior em desktops.
+      </p>
+      <p>
+        Portanto, essas unidades se relacionam diretamente com a largura e
+        altura da viewport, onde 1vw/1vh representa 1% do tamanho da
+        largura/altura dessa área visível. A diferença entre vw/vh e a % é bem
+        semelhante a diferença entre em e rem, onde a % é relativa ao contexto
+        local do elemento e o vw é relativo ao tamanho total da largura da
+        viewport do usuário.
+      </p>
+      <div class="exemplo">
+        <p id="vh-e-vw">Exemplo</p>
+      </div>
+      <h3>Vmin & Vmax</h3>
+      <p>
+        Essa unidade também se relaciona com as dimensões da viewport, mas com
+        um porém. Anteriormente quando vimos vh e vw precisávamos escolher se
+        gostaríamos de nos basear na altura (vh) ou na largura (vw) da viewport.
+        Diferentemente das anteriores, o vmin utilizará como base a menor
+        dimensão da viewport (altura x largura). Seguindo a mesma base lógica da
+        unidade anterior, o vmax terá como valor de referência a maior dimensão
+        da viewport.
+      </p>
+      <div class="exemplo">
+        <p id="vmin-e-vmax">Exemplo</p>
+      </div>
+    </div>
+  </body>
+</html>
