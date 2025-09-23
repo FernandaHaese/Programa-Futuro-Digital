@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades de Medida Flexíveis</title>
+    <link rel="stylesheet" type="text/css" href="medidasFlexiveis.css">
+</head>
+<body>
+    <h1>Tamanho de Font com <code>rem</code></h1>
+    <p>Assim fica consistente pelo documento todo!</p>
+    <div class="outras-medidas">
+        Pode ser aplicado a outras medidas mas, vão ficar ficar proporcionais ao <code>font-size</code> do elemento raiz (normalmente o tag <code>html</code>)
+    </div>
+    <div class="pai">
+        O <code>em</code> se baseia no <code>font-size</code> do pai, ao invés do elemento raiz
+        <div class="filho">
+            Então esse, com <code>0.5em</code>, vai ficar com metade do <code>font-size</code> do pai
+            <div class="filho">
+                E o efeito é cumulativo, então esse vai ficar com metade do pai dele e um quarto do <code>font-size</code> do avô!
+            </div>
+        </div>
+    </div>
+    <div class="pai-porcento">
+        O <code>%</code> se baseia na propriedade correspondente do pai. 
+        <div class="filho-porcento">
+            Seja <code>font-size</code>, <code>width</code> ou qualquer outra.
+        </div>
+    </div>
+    <p class="vh-e-vw">
+        As unidades <code>vw</code> e <code>vh</code> correpondem a um centésimo da largura e altura do viewport (a área visível da página web no navegador), respectivamente. Então 100vh correponde a a altura inteira do viewport e 50vw corresponde a metade da largura dele.
+    </p>
+    <p class="vmin-e-vmax">
+        As unidades <code>vmin</code> e <code>vmax</code> são parecidas, mas correspondem ao menor e maior dimensão do viewport, qualquer que essa seja. Então numa tela horizontal (como de laptop), a width que será a vmax, e numa vertical (como de celular), a height que será a vmax.
+    </p>
+    <p class="ch">
+        A unidade <code>ch</code> no entanto, se baseia no tamanho dos caracteres na font atual. Mais especificamente, <code>1ch</code> é igual a largura do caracter "0" (zero) na font. 
+    </p>
+</body>
+</html>

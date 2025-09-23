@@ -9,6 +9,7 @@ form.addEventListener("submit", (event) => {
   alert(
     `Cadastro concluído!\nNome: ${nome}\nEndereço: ${endereco}\nCelular: ${celular}\nEmail: ${email}`
   );
+  form.reset();
 });
 
 const formData = new formData(form);
