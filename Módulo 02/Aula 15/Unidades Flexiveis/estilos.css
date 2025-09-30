@@ -1,0 +1,83 @@
+/* Atividade 01: Criar uma página html com ao menos 5 unidades flexíveis diferentes */
+html {
+  font-size: 16px;
+  background-color: aliceblue;
+}
+
+.container {
+  background-color: white;
+  border: solid 2px black;
+  box-shadow: 0.25rem 0.25rem black;
+  padding: 1.25rem;
+  margin: 1.25rem;
+}
+
+.exemplo {
+  background-color: azure;
+  border: solid 0.125rem black;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+#pixel {
+  font-size: 10px;
+}
+
+#point {
+  font-size: 8pt;
+}
+
+#polegadas {
+  font-size: 0.1in;
+}
+
+#centimetros {
+  font-size: 0.25cm;
+}
+
+#em {
+  font-size: 0.6em;
+}
+
+#rem {
+  font-size: 0.6rem;
+}
+
+#porcentagem {
+  font-size: 60%;
+}
+
+#ch {
+  width: 1ch;
+  height: 1ch;
+  font-size: 1.25ch;
+}
+
+#vh-e-vw {
+  width: 20vw;
+  height: 20vh;
+  padding: 5vh 5vw;
+  background-color: lightblue;
+}
+
+#vmin-e-vmax {
+  width: 20vmax;
+  height: 20vmin;
+  padding: 5vmin 5vmax;
+  background-color: lightblue;
+}
