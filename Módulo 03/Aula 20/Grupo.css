@@ -1,3 +1,46 @@
 /* 
-Daniel Jesus, Maira Alejandra, Fernanda Haese, Wladimir 
+TEMA
+
+    - Bar
+
+1 EPIC
+
+    - Implementar atendimento online e delivery
+
+3 USER STORIES
+
+    - (US1) Eu como cliente do bar, quero uma opção de delivery para não precisar me descolar até o local;
+    - (US2) Eu, como cliente com um grupo de amigos quero dividir a conta para o delivery;
+    - (US3) Eu, como funcionário de entrega, quero ter a opção de escolher quais pedidos aceitar para entrega;
+    - (US4) Eu, como cliente, quero escolher a forma de pagamento.
+
+6 TASKS
+
+    - Para implementar (US1), disponibilizar um menu dos produtos para delivery; [4pts]
+    - Para implementar (US1), implementar sistema de cadastro de clientes / login; [2pts]
+    - Para implementar (US1), disponibilizar cupons de desconto; [4pts]
+    - Para implementar (US2), permitir selecionar contatos para dividir a conta; [2pts]
+    - Para implementar (US3), disponibilizar localização da entrega e implementar interface para aceitar ou rejeitar os pedidos para entrega; [8pts]
+    - Para implementar (US4), disponibilizar diferentes formas de pagamento; [3pts]
+    - Implementar protocolo de segurança para os dados dos usuários;
+
+PRIMEIRA SPRINT
+
+    - Para implementar (US1), disponibilizar um menu dos produtos para delivery; [4pts]
+    - Para implementar (US1), implementar sistema de cadastro de clientes / login; [2pts]
+
+SEGUNDA SPRINT
+
+    - Implementar protocolo de segurança para os dados dos usuários; [1pt]
+    - Para implementar (US4), disponibilizar diferentes formas de pagamento; [3pts]
+    - Para implementar (US2), permitir selecionar contatos para dividir a conta; [1pt]
+    - Para implementar (US1), disponibilizar cupons de desconto; [4pts]
+
+TERCEIRA SPRINT
+
+    - Implementar opção de aceitar ou rejeitar dividir o pagamento de pedidos em grupo; [2pts]
+    - Para implementar (US3), disponibilizar localização da entrega e implementar interface para aceitar ou rejeitar os pedidos para entrega; [8pts]
+    - Limitar as formas de pagamento para cartão e pix; [1pt]
+
+Grupo: Daniel Jesus, Maira Alejandra, Fernanda Haese, Wladimir 
 */
