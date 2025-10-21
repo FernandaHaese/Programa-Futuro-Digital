@@ -1,8 +1,17 @@
-//Classe que determina as informações a serem armazenadas em "Livro"
-
 class Livro {
   //Determina todas as informações para cadastrar um livro
-  constructor(titulo, autor, anoPublicacao, numeroPaginas, qtdEstoque) {
+  public titulo: string;
+  public autor: string;
+  public anoPublicacao: number;
+  public numeroPaginas: number;
+  public qtdEstoque: number;
+  constructor(
+    titulo: string,
+    autor: string,
+    anoPublicacao: number,
+    numeroPaginas: number,
+    qtdEstoque: number
+  ) {
     this.titulo = titulo;
     this.autor = autor;
     this.anoPublicacao = anoPublicacao;

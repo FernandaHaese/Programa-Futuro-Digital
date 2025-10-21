@@ -1,0 +1,29 @@
+Requisitos funcionais:
+- Permitir cadastrar livros
+- Permitir listar os livros cadastrados
+- Permitir cadastrar pessoas
+- Permitir listar pessoas cadastradas
+- Permitir cadastrar compras
+- Permitir listar compras cadastradas
+- Permitir cadastrar empréstimos
+- Permitir listar empréstimos cadastrados
+- Permitir devolver livros
+- Calcular multa de devolução de livros atrados
+- Permitir sair ou continuar no sistema
+
+
+Requisitos não funcionais:
+- Deve haver um menu que lista todas as possibilidades de ações no sistema
+- Deve ser possível sair ou continuar no sistema
+- Cada compra deve ter como dados o nome do livro, seu preço, qual vendedor realizou a compra, qual a data de venda, a quantidade vendida, o preço unitário do livro e quantidade de estoque do livro
+- O preço unitário de cada livro deve ser calculado dividindo o preço pela quantidade
+- Cada emprestimo deve ter como dados o nome do livro, da pessoa, os dias de empréstimo e a quantidade de estoque do livro
+- A multa para atraso na devolução do empréstimo deve ser calculada por quantos dias ele atrasou menos dias de emprestido * número de páginas do livro dividio por 100 * 2.0
+- Deve ser criada uma função para atualizar os dados do livro emprestado, informando a quantidade de dias que levou para devolver, usando o prompt sync e chamando a função para calcular multa para informar com o console.log a taxa de multa a ser paga
+- Cada livro deve ter com dados o titulo do livro, autor, ano de publicação, numero de páginas e quantidade de estoque
+- Cada pessoa cadastrada deve ter como dados o nome, cpd e data de Nascimento
+- Cada classe deve listar através de console.log e forEach todos os seus dados cadastrados
+- Deve ser criado um array para armazenar os cadastros de cada classe
+- Para capturar os dados, deve ser importado e chamado o módulo prompt sync e depois empurrar os dados para um array com new e push
+- Devem ser exibidas mensagens de confirmação de cadastro com console.log ao final de cada cadastro e depois chamar novamente a função menu
+

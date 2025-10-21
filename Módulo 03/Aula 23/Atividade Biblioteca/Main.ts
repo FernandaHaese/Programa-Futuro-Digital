@@ -5,6 +5,14 @@ const Compra = require("./Compra");
 const Emprestimo = require("./Emprestimo");
 const Pessoa = require("./Pessoa");
 
+const perguntar = (pergunta: string): string => {
+  const resposta = prompt(pergunta);
+  if (resposta === null) {
+    return "";
+  }
+  return resposta;
+};
+
 //Array para armazenar os dados armazenados de cada classe
 const livros = [];
 const compras = [];
@@ -14,11 +22,11 @@ const pessoas = [];
 //Função para adicionar um novo livro no sistema
 const adicionarLivro = () => {
   //Pedir com promptsync para o usuário preencher cada um dos dados para cadastro de um livro
-  const titulo = prompt("Título do livro: ");
-  const autor = prompt("Autor do livro: ");
-  const ano = prompt("Ano de publicação: ");
-  const paginas = prompt("Número de páginas: ");
-  const estoque = prompt("Qtd em estoque:");
+  const titulo = perguntar("Título do livro: ");
+  const autor = perguntar("Autor do livro: ");
+  const ano = perguntar("Ano de publicação: ");
+  const paginas = perguntar("Número de páginas: ");
+  const estoque = perguntar("Qtd em estoque:");
 
   //Empurra os dados preencidos para dentro do array livro
   const livro = new Livro(titulo, autor, ano, paginas, estoque);
@@ -38,9 +46,9 @@ const listarLivros = () => {
 //Função para adicionar uma nova pessoa/cliente no sistema
 const adicionarPessoa = () => {
   //Pedir com promptsync para o usuário preencher os dados para o cadastro de uma pessoa/cliente
-  const nome = prompt("Nome da pessoa: ");
-  const cpf = prompt("CPF da pessoa: ");
-  const dataNascimento = prompt("Data de nascimento da pessoa: ");
+  const nome = perguntar("Nome da pessoa: ");
+  const cpf = perguntar("CPF da pessoa: ");
+  const dataNascimento = perguntar("Data de nascimento da pessoa: ");
 
   //Empurra os dados preenchidos para dentro do array pessoa
   const pessoa = new Pessoa(nome, cpf, dataNascimento);
@@ -64,11 +72,11 @@ const adicionarCompra = () => {
 
   //Pedir com promptsync para o usuário preencher todas as informações para o cadastro de uma compra
   const livroIndex =
-    parseInt(prompt("Selecione o número do livro para compra: ")) - 1;
-  const preco = parseFloat(prompt("Preço total da compra: "));
-  const vendedor = prompt("Nome do vendedor: ");
-  const dataVenda = prompt("Data da venda: ");
-  const qtd = parseInt(prompt("Quantidade comprada: "));
+    parseInt(perguntar("Selecione o número do livro para compra: ")) - 1;
+  const preco = parseFloat(perguntar("Preço total da compra: "));
+  const vendedor = perguntar("Nome do vendedor: ");
+  const dataVenda = perguntar("Data da venda: ");
+  const qtd = parseInt(perguntar("Quantidade comprada: "));
 
   //Empurra os dados preenchidos para dentro do array compra
   const compra = new Compra(
@@ -97,15 +105,15 @@ const adicionarEmprestimo = () => {
   listarLivros();
   //Pede com o prompt sync para selecionar o número do livro para empréstimo
   const livroIndex =
-    parseInt(prompt("Selecione o número do livro para empréstimo: ")) - 1;
+    parseInt(perguntar("Selecione o número do livro para empréstimo: ")) - 1;
   //Chama a função listarPessoas para imprimir todos as pessoas/clientes cadastrados
   listarPessoas();
   //Pede com o prompt sync para informar o número da pessoa/cliente que irá realizar o empréstimo e quantos dias para o empréstimo
   const pessoaIndex =
     parseInt(
-      prompt("Selecione o número da pessoa que está pegando o empréstimo: ")
+      perguntar("Selecione o número da pessoa que está pegando o empréstimo: ")
     ) - 1;
-  const diasEmprestimo = parseInt(prompt("Número de dias para o empréstimo: "));
+  const diasEmprestimo = parseInt(perguntar("Número de dias para o empréstimo: "));
 
   //Empurra os dados preenchidos para o array emprestimo e exibe uma mensagem confirmando o cadastro
   const emprestimo = new Emprestimo(
@@ -133,9 +141,9 @@ const devolverLivro = () => {
 
   //Pede com o prompt sync para informar o número do empréstimo e quantos dias demorou para devolver
   const emprestimoIndex =
-    parseInt(prompt("Selecione o número do empréstimo para devolução: ")) - 1;
+    parseInt(perguntar("Selecione o número do empréstimo para devolução: ")) - 1;
   const demoraDias = parseInt(
-    prompt("Número de dias que demorou para devolver: ")
+    perguntar("Número de dias que demorou para devolver: ")
   );
 
   //Atualizar informações no cadastro de empréstimos e imprimir qual a multa a ser paga caso tenha atraso na devolução
@@ -157,7 +165,7 @@ const menu = () => {
   console.log("9. Devolver Livro");
   console.log("0. Sair");
   //Pede com prompt sync para que o usuário escolha uma opção
-  const escolha = prompt("Escolha uma opção: ");
+  const escolha = perguntar("Escolha uma opção: ");
 
   //Chama cada função especifica com base na escolha do usuário
   switch (escolha) {
@@ -191,7 +199,7 @@ const menu = () => {
     case "0":
       console.log("Saindo...");
       break;
-      //Caso não seja nenhuma das opções listadas, imprime mensagem de opção invalida e chama a função menu novamente
+    //Caso não seja nenhuma das opções listadas, imprime mensagem de opção invalida e chama a função menu novamente
     default:
       console.log("Opção inválida!");
       menu();
@@ -201,7 +209,7 @@ const menu = () => {
 //Confirmação se o usuário realmente deseja sair do sistema, usando while(true) / if
 while (true) {
   menu();
-  const continuar = prompt("Deseja sair do sistema? (s/n): ");
+  const continuar = perguntar("Deseja sair do sistema? (s/n): ");
   //Caso queria sair, finaliza o sistema, caso queira continuar, chama a função menu novamente
   if (continuar.toLowerCase() == "s") {
     break;

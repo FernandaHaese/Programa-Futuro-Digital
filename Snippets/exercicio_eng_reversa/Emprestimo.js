@@ -1,5 +1,7 @@
-class Emprestimo {
+//Classe que determina as informações para realizar um empréstimo
 
+class Emprestimo {
+    //Determina todas as informações para um empréstimo
     constructor(livro, pessoa, dias_emprestimo) {
         this.livro = livro;
         this.pessoa = pessoa;
@@ -7,6 +9,7 @@ class Emprestimo {
         this.livro.qtdEstoque -= 1;
     }
 
+    //Função para imprimir as informações sobre o empréstimo cadastrado
     imprimirDetalhes() {
         console.log("---------------------");
         console.log(`Livro: ${this.livro.titulo}`);
@@ -15,6 +18,7 @@ class Emprestimo {
         console.log("---------------------");
     }
 
+    //Função para calcular taxa de multa por dias de atraso ao devolver livros emprestados
     calcularMulta(demoraDias) {
         if (demoraDias <= this.dias_emprestimo) {
             return 0.0;
@@ -24,4 +28,5 @@ class Emprestimo {
 
 }
 
+//Exportando a classe
 module.exports = Emprestimo;

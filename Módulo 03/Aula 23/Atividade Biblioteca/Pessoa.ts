@@ -2,7 +2,10 @@
 
 class Pessoa {
   //Determina as informações para cadastrar um cliente
-  constructor(nome, cpf, dataNascimento) {
+  public nome: string;
+  public cpf: number;
+  public dataNascimento: Date;
+  constructor(nome: string, cpf: number, dataNascimento: Date) {
     this.nome = nome;
     this.cpf = cpf;
     this.dataNascimento = dataNascimento;
