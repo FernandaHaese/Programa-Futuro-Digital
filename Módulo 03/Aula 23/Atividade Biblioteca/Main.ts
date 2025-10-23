@@ -1,8 +1,7 @@
 //Importando o prompt-sync e classes necessárias
 const pergunta = require("prompt-sync")();
-import Pessoa from "./Pessoa";
-import Doador from "./Pessoa";
 import Obra, { Livro, Filme } from "./Obra";
+import Pessoa, { Doador } from "./Pessoa";
 import Compra from "./Compra";
 import Emprestimo from "./Emprestimo";
 import Doacao from "./Doacao";
@@ -91,7 +90,7 @@ const adicionarDoador = () => {
   const nome = pergunta("Nome do doador: ");
   const cpf = pergunta("CPF do doador: ");
   const dataNascimento = pergunta("Data de nascimento do doador: ");
-  const qtdDoacoes = parseInt(pergunta("Quantidade de doações realizadas: "));
+  const qtdDoacoes = pergunta("Quantidade de doações realizadas: ");
   //Empurra os dados preenchidos para dentro do array doador
   const doador = new Doador(nome, cpf, dataNascimento, qtdDoacoes);
   doadores.push(doador);
@@ -138,6 +137,30 @@ const listarCompras = () => {
   compras.forEach((compra, index) => {
     console.log(`\nCompra ${index + 1}:`);
     compra.imprimirDetalhes();
+  });
+};
+
+//Função para cadastrar uma nova doação no sistema
+const adicionarDoacao = () => {
+  //Chama a função listarDoadores para imprimir todos os doadores cadastrados
+  listarDoadores();
+  //Pede com o prompt sync para selecionar o número do doador
+  const doadorIndex = parseInt(pergunta("Selecione o número do doador: ")) - 1;
+  //Pede com o prompt sync para informar a data da doação e a obra doada
+  const dataDoacao = new Date(pergunta("Data da doação (AAAA-MM-DD): "));
+  const obraDoada = pergunta("Obra doada: ");
+  //Empurra os dados preenchidos para o array doacao e exibe uma mensagem confirmando o cadastro
+  const doacao = new Doacao(dataDoacao, obraDoada, doadores[doadorIndex]);
+  doacoes.push(doacao);
+  console.log("Doação adicionada com sucesso!");
+};
+
+//Função para imprimir uma lista com os dados de todas as doações cadastradas no sistema
+const listarDoacoes = () => {
+  console.log("Lista de Doações:");
+  doacoes.forEach((doacao, index) => {
+    console.log(`\nDoação ${index + 1}:`);
+    doacao.imprimirDetalhes();
   });
 };
 
