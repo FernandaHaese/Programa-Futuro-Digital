@@ -1,6 +1,6 @@
 //Importando o prompt-sync e classes necessárias
 const pergunta = require("prompt-sync")();
-import Obra, { Livro, Filme } from "./Obra";
+import { Livro, Filme } from "./Obra";
 import Pessoa, { Doador } from "./Pessoa";
 import Compra from "./Compra";
 import Emprestimo from "./Emprestimo";
