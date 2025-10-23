@@ -165,34 +165,30 @@ const listarDoacoes = () => {
 };
 
 //Função para cadastrar o empréstimo de um livro no sistema
-// ...existing code...
 const adicionarEmprestimo = () => {
+  //Opções para o usuário escolher se o empréstimo é de um livro ou filme
   console.log("Tipo de obra para empréstimo:");
   console.log("1. Livro");
   console.log("2. Filme");
-  const tipo = prompt("Escolha (1/2): ");
-
+  const tipo = pergunta("Escolha (1/2): ");
+  //Variável para armazenar a obra selecionada
   let obra;
+  //Verifica se o usuário escolheu a opção livro
   if (tipo === "1") {
+    // Avisa ao usuário se não existir `livros` disponíveis
     if (!Array.isArray(livros) || livros.length === 0) {
       console.log("Nenhum livro disponível para empréstimo.");
       return;
     }
+    //Imprime a lista de livros cadastrados e pergunta qual livro deseja pegar emprestado
     listarLivros();
     const livroIndex =
       parseInt(pergunta("Selecione o número do livro para empréstimo: "), 10) -
       1;
-    if (
-      Number.isNaN(livroIndex) ||
-      livroIndex < 0 ||
-      livroIndex >= livros.length
-    ) {
-      console.log("Seleção inválida de livro.");
-      return;
-    }
     obra = livros[livroIndex];
+    //Verifica se escolheu a opção filme
   } else if (tipo === "2") {
-    // Se não existir um array `filmes` nesta versão, avise o usuário
+    // Avisa ao usuário se não existir `filmes` disponíveis
     if (
       typeof filmes === "undefined" ||
       !Array.isArray(filmes) ||
@@ -201,67 +197,41 @@ const adicionarEmprestimo = () => {
       console.log("Nenhum filme disponível para empréstimo.");
       return;
     }
-    // tenta usar função listarFilmes se existir, senão imprime manualmente
+    //Imprime a lista de filmes cadastrados e pergunta qual filme deseja pegar emprestado
     if (typeof listarFilmes === "function") {
       listarFilmes();
-    } else {
-      console.log("Lista de Filmes:");
-      filmes.forEach((f, idx) => {
-        console.log(`\nFilme ${idx + 1}:`);
-        if (typeof f.imprimirDetalhes === "function") f.imprimirDetalhes();
-        else console.log(f);
-      });
     }
     const filmeIndex =
       parseInt(pergunta("Selecione o número do filme para empréstimo: "), 10) -
       1;
-    if (
-      Number.isNaN(filmeIndex) ||
-      filmeIndex < 0 ||
-      filmeIndex >= filmes.length
-    ) {
-      console.log("Seleção inválida de filme.");
-      return;
-    }
     obra = filmes[filmeIndex];
+    //Caso não escolha nenhuma das opções listadas, imprime mensagem de opção inválida e retorna
   } else {
     console.log("Opção inválida.");
     return;
   }
-
+  //Verifica se existem pessoas cadastradas para realizar o empréstimo
   if (!Array.isArray(pessoas) || pessoas.length === 0) {
     console.log("Nenhuma pessoa cadastrada para realizar o empréstimo.");
     return;
   }
+  //Imprime a lista de pessoas cadastradas e pergunta qual pessoa está pegando o empréstimo
   listarPessoas();
   const pessoaIndex =
     parseInt(
       pergunta("Selecione o número da pessoa que está pegando o empréstimo: "),
       10
     ) - 1;
-  if (
-    Number.isNaN(pessoaIndex) ||
-    pessoaIndex < 0 ||
-    pessoaIndex >= pessoas.length
-  ) {
-    console.log("Seleção inválida de pessoa.");
-    return;
-  }
-
+  //Pede com o prompt sync para informar o número de dias do empréstimo
   const diasEmprestimo = parseInt(
     pergunta("Número de dias para o empréstimo: "),
     10
   );
-  if (Number.isNaN(diasEmprestimo) || diasEmprestimo <= 0) {
-    console.log("Quantidade de dias inválida.");
-    return;
-  }
-
+  //Empurra os dados preenchidos para o array emprestimo e exibe uma mensagem confirmando o cadastro
   const emprestimo = new Emprestimo(obra, pessoas[pessoaIndex], diasEmprestimo);
   emprestimos.push(emprestimo);
   console.log("Empréstimo adicionado com sucesso!");
 };
-// ...existing code...
 
 //Função para imprimir uma lista com os dados de todos os empréstimos cadastrados no sistema
 const listarEmprestimos = () => {
@@ -273,7 +243,7 @@ const listarEmprestimos = () => {
 };
 
 //Função para atualizar a devolução de um dos empréstimos realizados no sistema
-const devolverLivro = () => {
+const devolverEmprestimo = () => {
   //Chama a função listarEmprestimos para imprimir todos os empréstimos cadastrados
   listarEmprestimos();
 
@@ -292,22 +262,22 @@ const devolverLivro = () => {
 //Menu listando todas ações possíveis
 const menu = () => {
   console.log("\nMenu:");
-  console.log("1. Adicionar Livro");
-  console.log("2. Listar Livros");
-  console.log("3. Adicionar Filme");
-  console.log("4. Listar Filmes");
-  console.log("5. Adicionar Pessoa");
-  console.log("6. Listar Pessoas");
-  console.log("7. Adicionar Doador");
-  console.log("8. Listar Doadores");
-  console.log("9. Adicionar Compra");
+  console.log("1.  Adicionar Livro");
+  console.log("2.  Listar Livros");
+  console.log("3.  Adicionar Filme");
+  console.log("4.  Listar Filmes");
+  console.log("5.  Adicionar Pessoa");
+  console.log("6.  Listar Pessoas");
+  console.log("7.  Adicionar Doador");
+  console.log("8.  Listar Doadores");
+  console.log("9.  Adicionar Compra");
   console.log("10. Listar Compras");
   console.log("11. Adicionar Doação");
   console.log("12. Listar Doações");
   console.log("13. Adicionar Empréstimo");
   console.log("14. Listar Empréstimos");
-  console.log("15. Devolver Livro");
-  console.log("0. Sair");
+  console.log("15. Devolução de Empréstimo");
+  console.log("0.  Sair");
   //Pede com prompt sync para que o usuário escolha uma opção
   const escolha = pergunta("Escolha uma opção: ");
 
@@ -332,7 +302,7 @@ const menu = () => {
       listarPessoas();
       break;
     case "7":
-      adicionarDoacao();
+      adicionarDoador();
       break;
     case "8":
       listarDoadores();
@@ -356,7 +326,7 @@ const menu = () => {
       listarEmprestimos();
       break;
     case "15":
-      devolverLivro();
+      devolverEmprestimo();
       break;
     case "0":
       console.log("Saindo...");
@@ -368,7 +338,7 @@ const menu = () => {
   }
 };
 
-//Confirmação se o usuário realmente deseja sair do sistema, usando while(true) / if
+//Confirmação se o usuário realmente deseja sair do sistema
 while (true) {
   menu();
   const continuar = pergunta("Deseja sair do sistema? (s/n): ");
