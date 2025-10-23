@@ -1,17 +1,22 @@
-
 //Importar a classe Livro
-const Livro = require("./Livro");
+import Obra, { Livro } from "./Obra";
 
 //Classe para cadastrar informações sobre a venda/compra de um livro
-class Compra {
-    public livro: Livro;
-    public preco: number;
-    public vendedor: string;
-    public data_venda: Date;
-    public qtd: number;
-    public precoUnitario: number;
+export default class Compra {
+  public livro: Livro;
+  public preco: number;
+  public vendedor: string;
+  public data_venda: Date;
+  public qtd: number;
+  public precoUnitario: number;
 
-    constructor (livro:Livro, preco:number, vendedor:string, data_venda:Date, qtd:number) {
+  constructor(
+    livro: Livro,
+    preco: number,
+    vendedor: string,
+    data_venda: Date,
+    qtd: number
+  ) {
     this.livro = livro;
     this.preco = preco;
     this.vendedor = vendedor;
@@ -19,7 +24,7 @@ class Compra {
     this.qtd = qtd;
     this.precoUnitario = this.calcularPrecoUnitario();
     this.livro.qtdEstoque += qtd;
-    }
+  }
 
   //Função para calcular o preço unitário de cada livro
   calcularPrecoUnitario() {
@@ -38,5 +43,3 @@ class Compra {
     console.log("---------------------");
   }
 }
-
-module.exports = Compra;

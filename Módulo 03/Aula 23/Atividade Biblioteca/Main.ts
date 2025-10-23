@@ -1,32 +1,29 @@
-//Importando prompt-sync e classes livro, compra, emprestimo e pessoa
-const prompt = require("prompt-sync")();
-const Livro = require("./Livro");
-const Compra = require("./Compra");
-const Emprestimo = require("./Emprestimo");
-const Pessoa = require("./Pessoa");
+//Importando o prompt-sync e classes necessárias
+const pergunta = require("prompt-sync")();
+import Pessoa from "./Pessoa";
+import Doador from "./Pessoa";
+import Obra, { Livro, Filme } from "./Obra";
+import Compra from "./Compra";
+import Emprestimo from "./Emprestimo";
+import Doacao from "./Doacao";
 
-const perguntar = (pergunta: string): string => {
-  const resposta = prompt(pergunta);
-  if (resposta === null) {
-    return "";
-  }
-  return resposta;
-};
-
-//Array para armazenar os dados armazenados de cada classe
-const livros = [];
-const compras = [];
-const emprestimos = [];
-const pessoas = [];
+//Array para armazenar os dados de cada classe
+const livros: any[] = [];
+const filmes: any[] = [];
+const compras: any[] = [];
+const emprestimos: any[] = [];
+const doacoes: any[] = [];
+const pessoas: any[] = [];
+const doadores: any[] = [];
 
 //Função para adicionar um novo livro no sistema
 const adicionarLivro = () => {
   //Pedir com promptsync para o usuário preencher cada um dos dados para cadastro de um livro
-  const titulo = perguntar("Título do livro: ");
-  const autor = perguntar("Autor do livro: ");
-  const ano = perguntar("Ano de publicação: ");
-  const paginas = perguntar("Número de páginas: ");
-  const estoque = perguntar("Qtd em estoque:");
+  const titulo = pergunta("Título do livro: ");
+  const autor = pergunta("Autor do livro: ");
+  const ano = pergunta("Ano de publicação: ");
+  const paginas = pergunta("Número de páginas: ");
+  const estoque = pergunta("Qtd em estoque:");
 
   //Empurra os dados preencidos para dentro do array livro
   const livro = new Livro(titulo, autor, ano, paginas, estoque);
@@ -43,12 +40,35 @@ const listarLivros = () => {
   });
 };
 
+//Functionção para adicionar um novo filme no sistema
+const adicionarFilme = () => {
+  //Pedir com promptsync para o usuário preencher cada um dos dados para cadastro de um filme
+  const titulo = pergunta("Título do filme: ");
+  const diretor = pergunta("Diretor do filme: ");
+  const ano = pergunta("Ano de lançamento: ");
+  const elenco = pergunta("Elenco (separado por vírgulas): ").split(",");
+  const genero = pergunta("Gênero do filme: ");
+  //Empurra os dados preencidos para dentro do array filme
+  const filme = new Filme(titulo, diretor, ano, elenco, genero);
+  filmes.push(filme);
+  console.log("Filme adicionado com sucesso!");
+};
+
+//Função para listar todos os filmes cadastrados no sistema
+const listarFilmes = () => {
+  console.log("Lista de Filmes:");
+  filmes.forEach((filme, index) => {
+    console.log(`\nFilme ${index + 1}:`);
+    filme.imprimirDetalhes();
+  });
+};
+
 //Função para adicionar uma nova pessoa/cliente no sistema
 const adicionarPessoa = () => {
   //Pedir com promptsync para o usuário preencher os dados para o cadastro de uma pessoa/cliente
-  const nome = perguntar("Nome da pessoa: ");
-  const cpf = perguntar("CPF da pessoa: ");
-  const dataNascimento = perguntar("Data de nascimento da pessoa: ");
+  const nome = pergunta("Nome da pessoa: ");
+  const cpf = pergunta("CPF da pessoa: ");
+  const dataNascimento = pergunta("Data de nascimento da pessoa: ");
 
   //Empurra os dados preenchidos para dentro do array pessoa
   const pessoa = new Pessoa(nome, cpf, dataNascimento);
@@ -65,6 +85,28 @@ const listarPessoas = () => {
   });
 };
 
+//Função para adicionar um novo doador no sistema
+const adicionarDoador = () => {
+  //Pedir com promptsync para o usuário preencher os dados para o cadastro de um doador
+  const nome = pergunta("Nome do doador: ");
+  const cpf = pergunta("CPF do doador: ");
+  const dataNascimento = pergunta("Data de nascimento do doador: ");
+  const qtdDoacoes = parseInt(pergunta("Quantidade de doações realizadas: "));
+  //Empurra os dados preenchidos para dentro do array doador
+  const doador = new Doador(nome, cpf, dataNascimento, qtdDoacoes);
+  doadores.push(doador);
+  console.log("Doador adicionado com sucesso!");
+};
+
+//Função para listar todos os doadores cadastrados no sistema
+const listarDoadores = () => {
+  console.log("Lista de Doadores:");
+  doadores.forEach((doador, index) => {
+    console.log(`\nDoador ${index + 1}:`);
+    doador.imprimirDetalhes();
+  });
+};
+
 //Função para adicionar informações sobre uma compra no sistema
 const adicionarCompra = () => {
   //Chama a função listarLivros para imprimir todos os livros cadastrados
@@ -72,11 +114,11 @@ const adicionarCompra = () => {
 
   //Pedir com promptsync para o usuário preencher todas as informações para o cadastro de uma compra
   const livroIndex =
-    parseInt(perguntar("Selecione o número do livro para compra: ")) - 1;
-  const preco = parseFloat(perguntar("Preço total da compra: "));
-  const vendedor = perguntar("Nome do vendedor: ");
-  const dataVenda = perguntar("Data da venda: ");
-  const qtd = parseInt(perguntar("Quantidade comprada: "));
+    parseInt(pergunta("Selecione o número do livro para compra: ")) - 1;
+  const preco = parseFloat(pergunta("Preço total da compra: "));
+  const vendedor = pergunta("Nome do vendedor: ");
+  const dataVenda = pergunta("Data da venda: ");
+  const qtd = parseInt(pergunta("Quantidade comprada: "));
 
   //Empurra os dados preenchidos para dentro do array compra
   const compra = new Compra(
@@ -105,15 +147,17 @@ const adicionarEmprestimo = () => {
   listarLivros();
   //Pede com o prompt sync para selecionar o número do livro para empréstimo
   const livroIndex =
-    parseInt(perguntar("Selecione o número do livro para empréstimo: ")) - 1;
+    parseInt(pergunta("Selecione o número do livro para empréstimo: ")) - 1;
   //Chama a função listarPessoas para imprimir todos as pessoas/clientes cadastrados
   listarPessoas();
   //Pede com o prompt sync para informar o número da pessoa/cliente que irá realizar o empréstimo e quantos dias para o empréstimo
   const pessoaIndex =
     parseInt(
-      perguntar("Selecione o número da pessoa que está pegando o empréstimo: ")
+      pergunta("Selecione o número da pessoa que está pegando o empréstimo: ")
     ) - 1;
-  const diasEmprestimo = parseInt(perguntar("Número de dias para o empréstimo: "));
+  const diasEmprestimo = parseInt(
+    pergunta("Número de dias para o empréstimo: ")
+  );
 
   //Empurra os dados preenchidos para o array emprestimo e exibe uma mensagem confirmando o cadastro
   const emprestimo = new Emprestimo(
@@ -141,9 +185,9 @@ const devolverLivro = () => {
 
   //Pede com o prompt sync para informar o número do empréstimo e quantos dias demorou para devolver
   const emprestimoIndex =
-    parseInt(perguntar("Selecione o número do empréstimo para devolução: ")) - 1;
+    parseInt(pergunta("Selecione o número do empréstimo para devolução: ")) - 1;
   const demoraDias = parseInt(
-    perguntar("Número de dias que demorou para devolver: ")
+    pergunta("Número de dias que demorou para devolver: ")
   );
 
   //Atualizar informações no cadastro de empréstimos e imprimir qual a multa a ser paga caso tenha atraso na devolução
@@ -165,7 +209,7 @@ const menu = () => {
   console.log("9. Devolver Livro");
   console.log("0. Sair");
   //Pede com prompt sync para que o usuário escolha uma opção
-  const escolha = perguntar("Escolha uma opção: ");
+  const escolha = pergunta("Escolha uma opção: ");
 
   //Chama cada função especifica com base na escolha do usuário
   switch (escolha) {
@@ -209,7 +253,7 @@ const menu = () => {
 //Confirmação se o usuário realmente deseja sair do sistema, usando while(true) / if
 while (true) {
   menu();
-  const continuar = perguntar("Deseja sair do sistema? (s/n): ");
+  const continuar = pergunta("Deseja sair do sistema? (s/n): ");
   //Caso queria sair, finaliza o sistema, caso queira continuar, chama a função menu novamente
   if (continuar.toLowerCase() == "s") {
     break;
