@@ -165,32 +165,103 @@ const listarDoacoes = () => {
 };
 
 //Função para cadastrar o empréstimo de um livro no sistema
+// ...existing code...
 const adicionarEmprestimo = () => {
-  //Chama a função listarLivros para imprimir todos os livros cadastrados
-  listarLivros();
-  //Pede com o prompt sync para selecionar o número do livro para empréstimo
-  const livroIndex =
-    parseInt(pergunta("Selecione o número do livro para empréstimo: ")) - 1;
-  //Chama a função listarPessoas para imprimir todos as pessoas/clientes cadastrados
+  console.log("Tipo de obra para empréstimo:");
+  console.log("1. Livro");
+  console.log("2. Filme");
+  const tipo = prompt("Escolha (1/2): ");
+
+  let obra;
+  if (tipo === "1") {
+    if (!Array.isArray(livros) || livros.length === 0) {
+      console.log("Nenhum livro disponível para empréstimo.");
+      return;
+    }
+    listarLivros();
+    const livroIndex =
+      parseInt(pergunta("Selecione o número do livro para empréstimo: "), 10) -
+      1;
+    if (
+      Number.isNaN(livroIndex) ||
+      livroIndex < 0 ||
+      livroIndex >= livros.length
+    ) {
+      console.log("Seleção inválida de livro.");
+      return;
+    }
+    obra = livros[livroIndex];
+  } else if (tipo === "2") {
+    // Se não existir um array `filmes` nesta versão, avise o usuário
+    if (
+      typeof filmes === "undefined" ||
+      !Array.isArray(filmes) ||
+      filmes.length === 0
+    ) {
+      console.log("Nenhum filme disponível para empréstimo.");
+      return;
+    }
+    // tenta usar função listarFilmes se existir, senão imprime manualmente
+    if (typeof listarFilmes === "function") {
+      listarFilmes();
+    } else {
+      console.log("Lista de Filmes:");
+      filmes.forEach((f, idx) => {
+        console.log(`\nFilme ${idx + 1}:`);
+        if (typeof f.imprimirDetalhes === "function") f.imprimirDetalhes();
+        else console.log(f);
+      });
+    }
+    const filmeIndex =
+      parseInt(pergunta("Selecione o número do filme para empréstimo: "), 10) -
+      1;
+    if (
+      Number.isNaN(filmeIndex) ||
+      filmeIndex < 0 ||
+      filmeIndex >= filmes.length
+    ) {
+      console.log("Seleção inválida de filme.");
+      return;
+    }
+    obra = filmes[filmeIndex];
+  } else {
+    console.log("Opção inválida.");
+    return;
+  }
+
+  if (!Array.isArray(pessoas) || pessoas.length === 0) {
+    console.log("Nenhuma pessoa cadastrada para realizar o empréstimo.");
+    return;
+  }
   listarPessoas();
-  //Pede com o prompt sync para informar o número da pessoa/cliente que irá realizar o empréstimo e quantos dias para o empréstimo
   const pessoaIndex =
     parseInt(
-      pergunta("Selecione o número da pessoa que está pegando o empréstimo: ")
+      pergunta("Selecione o número da pessoa que está pegando o empréstimo: "),
+      10
     ) - 1;
-  const diasEmprestimo = parseInt(
-    pergunta("Número de dias para o empréstimo: ")
-  );
+  if (
+    Number.isNaN(pessoaIndex) ||
+    pessoaIndex < 0 ||
+    pessoaIndex >= pessoas.length
+  ) {
+    console.log("Seleção inválida de pessoa.");
+    return;
+  }
 
-  //Empurra os dados preenchidos para o array emprestimo e exibe uma mensagem confirmando o cadastro
-  const emprestimo = new Emprestimo(
-    livros[livroIndex],
-    pessoas[pessoaIndex],
-    diasEmprestimo
+  const diasEmprestimo = parseInt(
+    pergunta("Número de dias para o empréstimo: "),
+    10
   );
+  if (Number.isNaN(diasEmprestimo) || diasEmprestimo <= 0) {
+    console.log("Quantidade de dias inválida.");
+    return;
+  }
+
+  const emprestimo = new Emprestimo(obra, pessoas[pessoaIndex], diasEmprestimo);
   emprestimos.push(emprestimo);
   console.log("Empréstimo adicionado com sucesso!");
 };
+// ...existing code...
 
 //Função para imprimir uma lista com os dados de todos os empréstimos cadastrados no sistema
 const listarEmprestimos = () => {
@@ -223,13 +294,19 @@ const menu = () => {
   console.log("\nMenu:");
   console.log("1. Adicionar Livro");
   console.log("2. Listar Livros");
-  console.log("3. Adicionar Pessoa");
-  console.log("4. Listar Pessoas");
-  console.log("5. Adicionar Compra");
-  console.log("6. Listar Compras");
-  console.log("7. Adicionar Empréstimo");
-  console.log("8. Listar Empréstimos");
-  console.log("9. Devolver Livro");
+  console.log("3. Adicionar Filme");
+  console.log("4. Listar Filmes");
+  console.log("5. Adicionar Pessoa");
+  console.log("6. Listar Pessoas");
+  console.log("7. Adicionar Doador");
+  console.log("8. Listar Doadores");
+  console.log("9. Adicionar Compra");
+  console.log("10. Listar Compras");
+  console.log("11. Adicionar Doação");
+  console.log("12. Listar Doações");
+  console.log("13. Adicionar Empréstimo");
+  console.log("14. Listar Empréstimos");
+  console.log("15. Devolver Livro");
   console.log("0. Sair");
   //Pede com prompt sync para que o usuário escolha uma opção
   const escolha = pergunta("Escolha uma opção: ");
@@ -243,24 +320,42 @@ const menu = () => {
       listarLivros();
       break;
     case "3":
-      adicionarPessoa();
+      adicionarFilme();
       break;
     case "4":
-      listarPessoas();
+      listarFilmes();
       break;
     case "5":
-      adicionarCompra();
+      adicionarPessoa();
       break;
     case "6":
-      listarCompras();
+      listarPessoas();
       break;
     case "7":
-      adicionarEmprestimo();
+      adicionarDoacao();
       break;
     case "8":
-      listarEmprestimos();
+      listarDoadores();
       break;
     case "9":
+      adicionarCompra();
+      break;
+    case "10":
+      listarCompras();
+      break;
+    case "11":
+      adicionarDoacao();
+      break;
+    case "12":
+      listarDoacoes();
+      break;
+    case "13":
+      adicionarEmprestimo();
+      break;
+    case "14":
+      listarEmprestimos();
+      break;
+    case "15":
       devolverLivro();
       break;
     case "0":
