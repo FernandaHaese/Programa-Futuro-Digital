@@ -19,12 +19,14 @@ function App() {
   });
 
   return (
-    <div>
-      <h1 className="estilo">Pets</h1>
-      {pets.map((animal) => (
-        <Pet nome={animal.nome} raca={animal.raca} especie={animal.especie} />
-      ))}
-    </div>
+    <>
+      <div>
+        <h1 className="estilo">Pets</h1>
+        {pets.map((animal) => (
+          <Pet nome={animal.nome} raca={animal.raca} especie={animal.especie} />
+        ))}
+      </div>
+    </>
   );
 }
 

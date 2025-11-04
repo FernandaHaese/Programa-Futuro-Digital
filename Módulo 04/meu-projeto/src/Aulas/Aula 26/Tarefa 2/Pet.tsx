@@ -4,13 +4,13 @@ function Pet({ nome, raca, especie }: any) {
   return (
     <Card>
       <div>
-        <b>Nome do pet:</b> {nome}
+        <b>Nome:</b> {nome}
       </div>
       <div>
-        <b>Raça do pet:</b> {raca}
+        <b>Raça:</b> {raca}
       </div>
       <div>
-        <b>Espécie do pet:</b> {especie}
+        <b>Espécie:</b> {especie}
       </div>
     </Card>
   );
