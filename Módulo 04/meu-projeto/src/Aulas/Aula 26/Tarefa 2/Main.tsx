@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Card from "./Card";
 import Pet from "./Pet";
+import "./Styles.css";
 
 const pets = [
   {
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div>
-      <h1>Pets</h1>
+      <h1 className="estilo">Pets</h1>
       {pets.map((animal) => (
         <Pet nome={animal.nome} raca={animal.raca} especie={animal.especie} />
       ))}
