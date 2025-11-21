@@ -1,0 +1,22 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 1rem;
+}
+
+.claro {
+  background-color: aliceblue;
+  color: #242424;
+  margin: 0;
+}
+
+.escuro {
+  background-color: #242424;
+  color: aliceblue;
+  margin: 0;
+}
